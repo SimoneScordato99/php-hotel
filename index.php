@@ -78,7 +78,7 @@
                             echo "<tr>"
                             . "<td>" . $mario['name'] . "</td>"
                             . "<td>" . $mario['description'] . "</td>"
-                            . "<td>" . ($mario['parking'] == FALSE ? " " : "<i class='fa-solid fa-square-parking' style='color: #49b941;'></i>") . "</td>"
+                            . "<td>" . ($mario['parking'] == FALSE ? "<i class='fa-solid fa-square-parking' style='color: #ff0000;'></i>" : "<i class='fa-solid fa-square-parking' style='color: #49b941;'></i>") . "</td>"
                             . "<td>" . $mario['vote'] . "</td>"
                             . "<td>" . $mario['distance_to_center'] . " km" . "</td>"
                             ."</tr>";                    
@@ -90,7 +90,7 @@
                             echo "<tr>"
                             . "<td>" . $mario['name'] . "</td>"
                             . "<td>" . $mario['description'] . "</td>"
-                            . "<td>" . ($mario['parking'] == FALSE ? " " : "<i class='fa-solid fa-square-parking' style='color: #49b941;'></i>") . "</td>"
+                            . "<td>" . ($mario['parking'] == FALSE ? "<i class='fa-solid fa-square-parking' style='color: #ff0000;'></i>" : "<i class='fa-solid fa-square-parking' style='color: #49b941;'></i>") . "</td>"
                             . "<td>" . $mario['vote'] . "</td>"
                             . "<td>" . $mario['distance_to_center'] . " km" . "</td>"
                             ."</tr>";                    
@@ -103,7 +103,7 @@
                             echo "<tr>"
                             . "<td>" . $mario['name'] . "</td>"
                             . "<td>" . $mario['description'] . "</td>"
-                            . "<td>" . ($mario['parking'] == FALSE ? " " : "<i class='fa-solid fa-square-parking' style='color: #49b941;'></i>") . "</td>"
+                            . "<td>" . ($mario['parking'] == FALSE ? "<i class='fa-solid fa-square-parking' style='color: #ff0000;'></i>" : "<i class='fa-solid fa-square-parking' style='color: #49b941;'></i>") . "</td>"
                             . "<td>" . $mario['vote'] . "</td>"
                             . "<td>" . $mario['distance_to_center'] . " km" . "</td>"
                             ."</tr>";                    
@@ -112,13 +112,7 @@
                 }
                 
             ?>
-        <!-- echo "<tr>"
-        . "<td>" . $mario['name'] . "</td>"
-        . "<td>" . $mario['description'] . "</td>"
-        . "<td>" . ($mario['parking'] == FALSE ? " " : "<i class='fa-solid fa-square-parking' style='color: #49b941;'></i>") . "</td>"
-        . "<td>" . $mario['vote'] . "</td>"
-        . "<td>" . $mario['distance_to_center'] . " km" . "</td>"
-        ."</tr>";  -->
+        
 
         </tr>
         </tbody>

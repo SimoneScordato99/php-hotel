@@ -51,6 +51,16 @@
 </head>
 <body>
     <h1>HOTEL</h1>
+    <form action="index.php" method="GET">
+        <h3>parcheggio:</h3>
+        <select name="parcheggio" id="">
+            <option ></option>
+            <option >si</option>
+            <option >no</option>
+        </select>
+        <button type="submit">cerca</button>
+    </form>
+
     <table class="table">
         <thead>
             <tr>
@@ -63,17 +73,52 @@
         </thead>
         <tbody>
             <?php
-                foreach ($hotels as $element => $mario) {
-                    echo "<tr>"
-                    . "<td>" . $mario['name'] . "</td>"
-                    . "<td>" . $mario['description'] . "</td>"
-                    . "<td>" . ($mario['parking'] == FALSE ? " " : "<i class='fa-solid fa-square-parking' style='color: #49b941;'></i>") . "</td>"
-                    . "<td>" . $mario['vote'] . "</td>"
-                    . "<td>" . $mario['distance_to_center'] . " km" . "</td>"
-                    ."</tr>";                    
-                };
+                if ($_GET['parcheggio'] == '') {
+                    foreach ($hotels as $element => $mario) {    
+                            echo "<tr>"
+                            . "<td>" . $mario['name'] . "</td>"
+                            . "<td>" . $mario['description'] . "</td>"
+                            . "<td>" . ($mario['parking'] == FALSE ? " " : "<i class='fa-solid fa-square-parking' style='color: #49b941;'></i>") . "</td>"
+                            . "<td>" . $mario['vote'] . "</td>"
+                            . "<td>" . $mario['distance_to_center'] . " km" . "</td>"
+                            ."</tr>";                    
+                        }
+                }
+                elseif ($_GET['parcheggio'] == 'si') {
+                    foreach ($hotels as $element => $mario) {    
+                        if (in_array($mario['parking'], $hotels)) {
+                            echo "<tr>"
+                            . "<td>" . $mario['name'] . "</td>"
+                            . "<td>" . $mario['description'] . "</td>"
+                            . "<td>" . ($mario['parking'] == FALSE ? " " : "<i class='fa-solid fa-square-parking' style='color: #49b941;'></i>") . "</td>"
+                            . "<td>" . $mario['vote'] . "</td>"
+                            . "<td>" . $mario['distance_to_center'] . " km" . "</td>"
+                            ."</tr>";                    
+                            }
+                        }
+                }
+                elseif ($_GET['parcheggio'] == 'no') {
+                    foreach ($hotels as $element => $mario) {    
+                        if (in_array($mario['parking']==FALSE, $hotels)) {
+                            echo "<tr>"
+                            . "<td>" . $mario['name'] . "</td>"
+                            . "<td>" . $mario['description'] . "</td>"
+                            . "<td>" . ($mario['parking'] == FALSE ? " " : "<i class='fa-solid fa-square-parking' style='color: #49b941;'></i>") . "</td>"
+                            . "<td>" . $mario['vote'] . "</td>"
+                            . "<td>" . $mario['distance_to_center'] . " km" . "</td>"
+                            ."</tr>";                    
+                            }
+                        }
+                }
+                
             ?>
-        
+        <!-- echo "<tr>"
+        . "<td>" . $mario['name'] . "</td>"
+        . "<td>" . $mario['description'] . "</td>"
+        . "<td>" . ($mario['parking'] == FALSE ? " " : "<i class='fa-solid fa-square-parking' style='color: #49b941;'></i>") . "</td>"
+        . "<td>" . $mario['vote'] . "</td>"
+        . "<td>" . $mario['distance_to_center'] . " km" . "</td>"
+        ."</tr>";  -->
 
         </tr>
         </tbody>
